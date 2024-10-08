@@ -48,4 +48,13 @@ describe(StringCalculator, () => {
     // assert
     expect(result).toEqual(3);
   });
+  it("5. Three numbers, delimited either way, returns the sum `'1\n2,3\n4' => 10`", () => {
+    // arrange
+    const stringCalculator = new StringCalculator();
+
+    // act
+    let result = stringCalculator.add('1\n2,3\n4');
+    // assert
+    expect(result).toEqual(10);
+  });
 });
