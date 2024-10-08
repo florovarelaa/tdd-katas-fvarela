@@ -75,4 +75,13 @@ describe(StringCalculator, () => {
     // assert
     expect(result).toEqual(1010);
   });
+  it("8. A single char delimiter can be defined on the first line starting with `//` (e.g `//#\n1#2` for a ‘#’ as the delimiter)", () => {
+    // arrange
+    const stringCalculator = new StringCalculator();
+
+    // act
+    let result = stringCalculator.add('//#\n1#2');
+    // assert
+    expect(result).toEqual(3);
+  });
 });

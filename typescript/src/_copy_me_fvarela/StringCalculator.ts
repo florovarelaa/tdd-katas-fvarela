@@ -4,7 +4,14 @@ export class StringCalculator {
   add(input: string): number {
     if (input === '') return 0;
 
-    const numbers = input.split(/,|\n/).map((element) => Number(element));
+    let delimiter = ',';
+    if (input.startsWith('//')) {
+      const delimiterEndIndex = input.indexOf('\n');
+      delimiter = input.substring(2, delimiterEndIndex);
+      input = input.substring(delimiterEndIndex + 1);
+    }
+
+    const numbers = input.split(new RegExp(`[${delimiter}\n]`)).map(Number);
 
     const negatives = numbers.filter(num => num < 0);
     if (negatives.length > 0) {
