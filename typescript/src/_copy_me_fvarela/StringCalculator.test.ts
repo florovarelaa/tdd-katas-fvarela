@@ -57,4 +57,13 @@ describe(StringCalculator, () => {
     // assert
     expect(result).toEqual(10);
   });
+  it("6. Negative numbers throw an exception with the message `'-1,2,-3' => 'negatives not allowed: -1,-3'`", () => {
+    // arrange
+    const stringCalculator = new StringCalculator();
+
+    // act
+    expect(() => {
+      stringCalculator.add('-1,2,-3');
+    }).toThrowError('negatives not allowed: -1,-3');
+  });
 });
