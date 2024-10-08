@@ -4,7 +4,7 @@ export class StringCalculator {
   add(input: string): number {
     if (input === '') return 0;
 
-    const numbers = input.split(',').map((element) => Number(element));
+    const numbers = input.split(/,|\n/).map((element) => Number(element));
 
     const result = numbers.reduce((acc, curr) => acc + curr, 0);
 

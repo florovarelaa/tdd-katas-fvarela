@@ -39,4 +39,13 @@ describe(StringCalculator, () => {
     // assert
     expect(result).toEqual(30);
   });
+  it("4. Two numbers, newline delimited, returns the sum `'1\n2' => 3`", () => {
+    // arrange
+    const stringCalculator = new StringCalculator();
+
+    // act
+    let result = stringCalculator.add('1\n2');
+    // assert
+    expect(result).toEqual(3);
+  });
 });
