@@ -66,4 +66,13 @@ describe(StringCalculator, () => {
       stringCalculator.add('-1,2,-3');
     }).toThrowError('negatives not allowed: -1,-3');
   });
+  it("7. Numbers greater than 1000 are ignored", () => {
+    // arrange
+    const stringCalculator = new StringCalculator();
+
+    // act
+    let result = stringCalculator.add('1\n2,3\n4,1000,1001\n1002');
+    // assert
+    expect(result).toEqual(1010);
+  });
 });
