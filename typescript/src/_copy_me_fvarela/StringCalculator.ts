@@ -2,6 +2,6 @@ export class StringCalculator {
   constructor() {}
 
   add(input) {
-    return null;
+    return input === '' ? 0 : null;
   }
 }
