@@ -84,4 +84,13 @@ describe(StringCalculator, () => {
     // assert
     expect(result).toEqual(3);
   });
+  it("9. A multi char delimiter can be defined on the first line starting with `//` (e.g. `//###\n1###2` for ‘###’ as the delimiter)", () => {
+    // arrange
+    const stringCalculator = new StringCalculator();
+
+    // act
+    let result = stringCalculator.add('//###\n1###2');
+    // assert
+    expect(result).toEqual(3);
+  });
 });

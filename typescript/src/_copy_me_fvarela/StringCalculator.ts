@@ -11,7 +11,9 @@ export class StringCalculator {
       input = input.substring(delimiterEndIndex + 1);
     }
 
-    const numbers = input.split(new RegExp(`[${delimiter}\n]`)).map(Number);
+    const escapedDelimiter = delimiter.replace(/[-\/\\^$.*+?()[\]{}|]/g, '\\$&');
+
+    const numbers = input.split(new RegExp(`[${escapedDelimiter}\n]`)).map(Number);
 
     const negatives = numbers.filter(num => num < 0);
     if (negatives.length > 0) {
