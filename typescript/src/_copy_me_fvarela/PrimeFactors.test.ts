@@ -41,4 +41,24 @@ describe(PrimeFactors, () => {
     // assert
     expect(result).toEqual([2,2]);
   });
+  it("`5` should return `[5]`", () => {
+    // arrange
+    const sut = new PrimeFactors();
+
+    // act
+    const result = sut.generate(5);
+
+    // assert
+    expect(result).toEqual([5]);
+  });
+  it("`6` should return `[2,3]`", () => {
+    // arrange
+    const sut = new PrimeFactors();
+
+    // act
+    const result = sut.generate(6);
+
+    // assert
+    expect(result).toEqual([2,3]);
+  });
 });
