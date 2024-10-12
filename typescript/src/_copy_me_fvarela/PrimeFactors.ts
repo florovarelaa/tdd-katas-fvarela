@@ -1,7 +1,8 @@
 export class PrimeFactors {
   constructor() {}
 
-  generate(number) {
+  generate(number: number): number[] {
+    if (number === 1) return [];
     return null;
   }
 }
