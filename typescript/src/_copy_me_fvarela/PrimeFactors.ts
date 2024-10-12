@@ -3,7 +3,6 @@ export class PrimeFactors {
 
   generate(number: number): number[] {
     if (number === 1) return [];
-    if (number === 2) return [2]
-    return null;
+    return [number]
   }
 }
