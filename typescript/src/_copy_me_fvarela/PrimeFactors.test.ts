@@ -81,4 +81,14 @@ describe(PrimeFactors, () => {
     // assert
     expect(result).toEqual([2,2,2]);
   });
+  it("`9` should return `[3,3]`", () => {
+    // arrange
+    const sut = new PrimeFactors();
+
+    // act
+    const result = sut.generate(9);
+
+    // assert
+    expect(result).toEqual([3,3]);
+  });
 });
